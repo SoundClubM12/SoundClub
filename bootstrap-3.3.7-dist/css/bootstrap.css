@@ -11,6 +11,9 @@ html {
 }
 body {
   margin: 0;
+  background-image: url("Images/vinil2.jpg");
+  background-size: cover;
+
 }
 article,
 aside,
@@ -61,7 +64,7 @@ dfn {
 }
 h1 {
   margin: .67em 0;
-  font-size: 2em;
+  font-size: 36em;
 }
 mark {
   color: #000;
@@ -262,9 +265,15 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
+  font-family: 'Monstserrat-Regular';
 
+  src: url('../fonts/Montserrat-Regular.ttf') format ('truetype');
   src: url('../fonts/glyphicons-halflings-regular.eot');
-  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'),
+  url('../fonts/glyphicons-halflings-regular.woff') format('woff'),
+  url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+  url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
@@ -1086,7 +1095,7 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
-  background-color: #fff;
+  background-image: url("Images/vinil2.jpg");
 }
 input,
 button,
@@ -1264,7 +1273,9 @@ h6 .small,
 }
 h1,
 .h1 {
-  font-size: 36px;
+  font-size: 70px;
+  color: #D6B441;
+  font-family: "Monstserrat-Regular";
 }
 h2,
 .h2 {
