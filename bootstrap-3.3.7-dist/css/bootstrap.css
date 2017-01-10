@@ -5,15 +5,75 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
-  font-family: sans-serif;
+  font-family: "Montserrat";
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
-body {
-  margin: 0;
-  background-image: url("Images/vinil2.jpg");
-  background-size: cover;
+body{
 
+}
+#contenedor{
+}
+#cabecera {
+			background: #525150;
+			height: 55px;
+			font-family: "Montserrat";
+      font-size: 25px;
+			width: 100%;
+			left: 0;
+			top: 0;
+			position: fixed;
+}
+#cabecera .izquierda {
+			float: left;
+      margin: 0 10px 20px 10px;
+			padding: 10px 0 0 20px;
+			text-decoration: none;
+			color: #D6B441;
+}
+#cabecera .derecha {
+      font-size: 17px;
+			float: right;
+      margin: 0 10px 20px 10px;
+			padding: 15px 25px 0 20px;
+			text-decoration: none;
+			color: #D6B441;
+}
+#cabecera .derecha:hover {
+			color: #FFFFFF;
+}
+#cabecera .login{
+  font-size: 17px;
+  float: right;
+  margin: 5px 10px 20px 10px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  color: #525150;
+  background-color: #D6B441;
+  border-radius: 5px;
+}
+#cabecera .login:hover{
+  color: #D6B441;
+  background-color: #FFFFFF;
+}
+#registro{
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  border-color: white;
+  background-color: #383734;
+  text-align: center;
+  margin: 25px 600px 50px 600px;
+  padding: 20px 20px 20px 20px;
+  opacity: 0.8;
+}
+#registro .field{
+  font-size: 20px;
+  border-radius: 2px;
+  border-width: 0px;
+  margin: 10px 5px 5px 5px;
+  padding: 1px 60px 10px 10px;
+  background-color: #FFFFFF;
 }
 article,
 aside,
@@ -265,16 +325,18 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  font-family: 'Monstserrat-Regular';
 
-  src: url('../fonts/Montserrat-Regular.ttf') format ('truetype');
   src: url('../fonts/glyphicons-halflings-regular.eot');
   src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
   url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'),
   url('../fonts/glyphicons-halflings-regular.woff') format('woff'),
   url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'),
   url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+
+  font-family: "Montserrat";
+  src: local("Montserrat-Regular"),url("../fonts/Montserrat-Regular.otf") format('opentype');
 }
+
 .glyphicon {
   position: relative;
   top: 1px;
@@ -1094,8 +1156,8 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
-  color: #333;
-  background-image: url("Images/vinil2.jpg");
+  background-image: url("Images/Notes.jpg");
+  background-size: cover;
 }
 input,
 button,
@@ -1106,13 +1168,26 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #337ab7;
+  color: #FFFFFF;
+  display: block;
   text-decoration: none;
+  float: left;
+  margin-top: 10px;
+}
+#login{
+  font-size: 15px;
+  font-weight: bold;
+  float: right;
+  margin: 0 5px 5px 5px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  color: #525150;
+  background-color: #FFFFFF;
+  border-radius: 3px;
 }
 a:hover,
 a:focus {
-  color: #23527c;
-  text-decoration: underline;
+  text-decoration: none;
 }
 a:focus {
   outline: 5px auto -webkit-focus-ring-color;
@@ -1226,13 +1301,18 @@ h6 .small,
   color: #777;
 }
 h1,
-.h1,
+.h1{
+  margin-top: 100px;
+  margin-bottom: 5px;
+}
 h2,
-.h2,
+.h2{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 h3,
 .h3 {
-  margin-top: 20px;
-  margin-bottom: 10px;
+
 }
 h1 small,
 .h1 small,
@@ -1273,13 +1353,17 @@ h6 .small,
 }
 h1,
 .h1 {
-  font-size: 70px;
+  font-size: 75px;
   color: #D6B441;
-  font-family: "Monstserrat-Regular";
+  font-family: "Montserrat";
+  text-align: center;
 }
 h2,
 .h2 {
-  font-size: 30px;
+  font-size: 16px;
+  text-align: center;
+  font-family: "Montserrat";
+  color: white;
 }
 h3,
 .h3 {
