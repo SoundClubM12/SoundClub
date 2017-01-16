@@ -4,6 +4,18 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+  <?php require_once 'Class/loginstatus.php';
+
+    error_reporting(0);
+    //Identifica si todos los campos se han rellenado
+    require_once("cannotlogin.php");
+    //Crea un nuevo objeto para iniciar sesión
+    $login = new login();
+    if(isset($_REQUEST['login']) && cannotlogin::checkfields()==""){
+      $login->nueva_sesion();
+    }
+   ?>
+   
 <html>
     <head>
         <meta charset="UTF-8">
@@ -11,14 +23,6 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="\SoundClub\bootstrap-3.3.7-dist\css\bootstrap.css" />
     </head>
     <body>
-      <?php
-        $erroraccount = "";
-        $loginstat = false;
-        include("cannotlogin.php");
-        if(isset($_REQUEST['login'])&& $error==false){
-          include("loginstatus.php");
-        }
-       ?>
       <div id="contenedor">
         <div id="cabecera">
             <a href class="izquierda">Soundclub</a>
@@ -41,8 +45,13 @@ and open the template in the editor.
                 <input type="submit" name="login" value="Login" class="register"/>
               </form>
             </div>
-            <div id="<?php if($loginstat==true){echo 'loginstat';}?>">
-              <a><?php echo $erroraccount;?></a>
+            <div id="<?php if(cannotlogin::checkfields()!=""){echo 'loginstat';}?>">
+              <a><?php echo cannotlogin::checkfields();?></a>
+            </div>
+            <div id="<?php if($erroraccount=$_GET["erroraccount"]!=""){echo 'loginstat';}?>">
+              <a><?php
+              $erroraccount=$_GET["erroraccount"];
+              echo $erroraccount; ?></a>
             </div>
           </div>
         </div>

@@ -1,30 +1,27 @@
 <?php
+class cannotlogin{
+  public static function checkfields(){
+    $errorfield = "";
 
-$error = false;
+    if(isset($_REQUEST['login'])){
 
-if(isset($_REQUEST['login'])){
+      $username = $_REQUEST['username'];
+      $password = $_REQUEST['password'];
 
-  $username = $_REQUEST['username'];
-  $password = $_REQUEST['password'];
+      if(trim($username)==""){
+        $errorfield = "&#x26A0; Set your username";
+      }
 
-  if(trim($username)==""){
-    $error = true;
-    $loginstat = true;
-    $erroraccount = "&#x26A0; Set your username";
+      if(trim($password)==""){
+        $errorfield = "&#x26A0; Set your password";
+      }
 
+      if(trim($password)=="" && trim($username)==""){
+        $errorfield = "&#x26A0; Set your username and password";
+      }
+
+    }
+    return $errorfield;
   }
-
-  if(trim($password)==""){
-    $error = true;
-    $loginstat = true;
-    $erroraccount = "&#x26A0; Set your password";
-  }
-
-  if(trim($password)=="" && trim($username)==""){
-    $loginstat = true;
-    $erroraccount = "&#x26A0; Set your username and password";
-  }
-
 }
-
  ?>

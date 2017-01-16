@@ -12,7 +12,7 @@ and open the template in the editor.
     </head>
     <body>
       <?php
-        include("cannotregister.php");
+        require_once("cannotregister.php");
        ?>
       <div id="contenedor">
         <div id="cabecera">
@@ -38,8 +38,8 @@ and open the template in the editor.
                 <input type="submit" name="register" value="Register" class="register"/>
               </form>
             </div>
-            <div id="<?php if($registerstat==true){echo 'registerstat';}?>">
-              <a></a>
+            <div id="<?php if(cannotregister::checkfields()!=""){echo 'loginstat';}?>">
+              <a><?php echo cannotregister::checkfields(); ?></a>
             </div>
           </div>
         </div>
