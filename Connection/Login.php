@@ -15,7 +15,7 @@ and open the template in the editor.
       $login->nueva_sesion();
     }
    ?>
-   
+
 <html>
     <head>
         <meta charset="UTF-8">

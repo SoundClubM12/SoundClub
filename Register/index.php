@@ -4,6 +4,16 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<?php require_once 'Class/registerstatus.php';
+
+require_once("cannotregister.php");
+$register = new Register();
+
+if(isset($_REQUEST['register']) && cannotregister::checkfields()==""){
+  $register->nuevo_usuario();
+}
+
+?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -11,9 +21,6 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="\SoundClub\bootstrap-3.3.7-dist\css\bootstrap.css"/>
     </head>
     <body>
-      <?php
-        require_once("cannotregister.php");
-       ?>
       <div id="contenedor">
         <div id="cabecera">
             <a href class="izquierda">Soundclub</a>
@@ -41,13 +48,16 @@ and open the template in the editor.
             <div id="<?php if(cannotregister::checkfields()!=""){echo 'loginstat';}?>">
               <a><?php echo cannotregister::checkfields(); ?></a>
             </div>
+            <div id="<?php if($errorregister=$_GET["errorregister"]!=""){echo 'loginstat';}?>">
+              <a><?php
+              $errorregister=$_GET["errorregister"];
+              echo $errorregister; ?></a>
+            </div>
           </div>
         </div>
         <div id="pie">
           Copyright (c) 2016 Copyright Holder All Rights Reserved.
         </div>
-        <?php
-        ?>
       </div>
     </body>
 </html>
