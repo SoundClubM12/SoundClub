@@ -1,6 +1,7 @@
 <?php
 
 require_once("connection.php");
+require_once("validation.php");
 
 class Register{
   public function nuevo_usuario(){
@@ -14,19 +15,22 @@ class Register{
 
     if($password==$cpassword){
       if(mysql_num_rows($query)==1){
-        $errorregister = "&#x26A0; This username or email already exists";
-        header("Location:index.php?errorregister=".urlencode($errorregister));
+        $alertregister = "&#x26A0; This username or email already exists";
+        header("Location:index.php?alertregister=".urlencode($alertregister));
       }
       else{
-        $insertar = "insert into users (username, email, password, typeuser) values ('$username', '$email', '$password', 'user')";
+        $idv = Validation::gen_idvalidated_code();
+        $sendemail = Validation::send_idvalidated_code($email, $idv);
+        $alertregister = "&#x26A0; We have sent you an email to validate your account";
+        $insertar = "insert into users (username, email, password, typeuser, idvalidated) values ('$username', '$email', '$password', 'user', '$idv')";
         mysql_query($insertar, Conectar::connection());
+        header("Location:index.php?alertregister=".urlencode($alertregister));
       }
     }
     else{
-      $errorregister = "&#x26A0; Passwords do not match";
-      header("Location:index.php?errorregister=".urlencode($errorregister));
+      $alertregister = "&#x26A0; Passwords do not match";
+      header("Location:index.php?alertregister=".urlencode($alertregister));
     }
   }
 }
  ?>
- Warning: mysql_num_rows() expects parameter 1 to be resource, boolean given in C:\xampp\htdocs\SoundClub\Register\Class\registerstatus.php on line 14

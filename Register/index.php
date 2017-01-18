@@ -48,10 +48,10 @@ if(isset($_REQUEST['register']) && cannotregister::checkfields()==""){
             <div id="<?php if(cannotregister::checkfields()!=""){echo 'loginstat';}?>">
               <a><?php echo cannotregister::checkfields(); ?></a>
             </div>
-            <div id="<?php if($errorregister=$_GET["errorregister"]!=""){echo 'loginstat';}?>">
+            <div id="<?php if($alertregister=$_GET["alertregister"]!=""){echo 'loginstat';}?>">
               <a><?php
-              $errorregister=$_GET["errorregister"];
-              echo $errorregister; ?></a>
+              $alertregister=$_GET["alertregister"];
+              echo $alertregister; ?></a>
             </div>
           </div>
         </div>
