@@ -24,7 +24,7 @@ class Register{
         $alertregister = "&#x26A0; We have sent you an email to validate your account";
         $insertar = "insert into users (username, email, password, typeuser, idvalidated) values ('$username', '$email', '$password', 'user', '$idv')";
         mysql_query($insertar, Conectar::connection());
-        header("Location:index.php?alertregister=".urlencode($alertregister));
+        header("Location:../Connection/Login.php?alertregister=".urlencode($alertregister));
       }
     }
     else{

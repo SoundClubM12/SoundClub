@@ -53,6 +53,11 @@ and open the template in the editor.
               $erroraccount=$_GET["erroraccount"];
               echo $erroraccount; ?></a>
             </div>
+            <div id="<?php if($alertregister=$_GET["alertregister"]!=""){echo 'loginstat';}?>">
+              <a><?php
+              $alertregister=$_GET["alertregister"];
+              echo $alertregister; ?></a>
+            </div>
           </div>
         </div>
         <div id="pie">
