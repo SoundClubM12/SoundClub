@@ -9,7 +9,7 @@ class Register{
     $email = $_REQUEST['email'];
     $password = $_REQUEST['password'];
     $cpassword = $_REQUEST['cpassword'];
-
+    $passwordhash = password_hash($password, PASSWORD_DEFAULT);
     $searchuser = "select * from users where username ='$username' or email='$email'";
     $query = mysql_query($searchuser, Conectar::connection());
 
@@ -22,7 +22,7 @@ class Register{
         $idv = Validation::gen_idvalidated_code();
         $sendemail = Validation::send_idvalidated_code($email, $idv);
         $alertregister = "&#x26A0; We have sent you an email to validate your account";
-        $insertar = "insert into users (username, email, password, typeuser, idvalidated) values ('$username', '$email', '$password', 'user', '$idv')";
+        $insertar = "insert into users (username, email, password, typeuser, idvalidated) values ('$username', '$email', '$passwordhash', 'user', '$idv')";
         mysql_query($insertar, Conectar::connection());
         header("Location:../Connection/Login.php?alertregister=".urlencode($alertregister));
       }

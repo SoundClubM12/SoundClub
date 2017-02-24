@@ -1,10 +1,11 @@
 <?php
 
-require_once("connection.php");
+require_once("Class/connection.php");
 
 $idv = $_GET['idv'];
-$searchidv = "insert into users (validated) values (1) where idvalidated='$idv'";
+$searchidv = "update users set validated=1 WHERE idvalidated='$idv'";
 $query = mysql_query($searchidv, Conectar::connection());
-header("Location:../Connection/Login.php");
+$alertregister = "Your account has been validated";
+header("Location:../Connection/Login.php?alertregister=".urlencode($alertregister));
 
  ?>

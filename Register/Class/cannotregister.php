@@ -13,22 +13,22 @@ class cannotregister{
       $cpassword = $_REQUEST['cpassword'];
 
         if(trim($username)==""){
-          $errorfield[0] = "|username| ";
+          $errorfield[0] = "username, ";
           $counterrorfield++;
         }
 
         if(trim($email)==""){
-          $errorfield[1] = "|email| ";
+          $errorfield[1] = "email, ";
           $counterrorfield++;
         }
 
         if(trim($password)==""){
-          $errorfield[2] = "|password| ";
+          $errorfield[2] = "password, ";
           $counterrorfield++;
         }
 
         if(trim($password)==""){
-          $errorfield[3] = "|pass confirm| ";
+          $errorfield[3] = "pass confirm ";
           $counterrorfield++;
         }
 

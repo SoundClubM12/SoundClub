@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <?php require_once 'Class/registerstatus.php';
 
-require_once("cannotregister.php");
+require_once("Class/cannotregister.php");
 $register = new Register();
 
 if(isset($_REQUEST['register']) && cannotregister::checkfields()==""){
@@ -20,7 +20,7 @@ if(isset($_REQUEST['register']) && cannotregister::checkfields()==""){
         <title>SoundClub</title>
         <link rel="stylesheet" type="text/css" href="\SoundClub\bootstrap-3.3.7-dist\css\bootstrap.css"/>
     </head>
-    <body>
+    <body id="register">
       <div id="contenedor">
         <div id="cabecera">
             <a href class="izquierda">Soundclub</a>
@@ -38,8 +38,8 @@ if(isset($_REQUEST['register']) && cannotregister::checkfields()==""){
               <a href="../Connection/Login.php" id="login">Login</a>
               <br /><br /><hr />
               <form method="post" enctype="multipart/form-data" action="index.php">
-                <input type="text" name="username" placeholder="Username" class="field"/><br />
-                <input type="email" name="email" placeholder="Email" class="field"/><br />
+                <input type="text" name="username" placeholder="Username" class="field" value="<?php echo $_REQUEST['username']; ?>"/><br />
+                <input type="email" name="email" placeholder="Email" class="field" value="<?php echo $_REQUEST['email']; ?>"/><br />
                 <input type="password" name="password" placeholder="Password" class="field"/><br />
                 <input type="password" name="cpassword" placeholder="Confirm Password" class="field"/><br />
                 <input type="submit" name="register" value="Register" class="register"/>

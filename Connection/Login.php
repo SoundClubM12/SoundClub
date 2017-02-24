@@ -6,9 +6,9 @@ and open the template in the editor.
 -->
   <?php require_once 'Class/loginstatus.php';
 
-    error_reporting(0);
+
     //Identifica si todos los campos se han rellenado
-    require_once("cannotlogin.php");
+    require_once("Class/cannotlogin.php");
     //Crea un nuevo objeto para iniciar sesión
     $login = new login();
     if(isset($_REQUEST['login']) && cannotlogin::checkfields()==""){
@@ -22,7 +22,7 @@ and open the template in the editor.
         <title>SoundClub</title>
         <link rel="stylesheet" type="text/css" href="\SoundClub\bootstrap-3.3.7-dist\css\bootstrap.css" />
     </head>
-    <body>
+    <body id="register">
       <div id="contenedor">
         <div id="cabecera">
             <a href class="izquierda">Soundclub</a>
@@ -40,7 +40,7 @@ and open the template in the editor.
               <a href="../Register/index.php" id="login">Register</a>
               <br /><br /><hr />
               <form method="post" enctype="multipart/form-data" action="Login.php">
-                <input type="text" name="username" placeholder="Username" class="field"/><br />
+                <input type="text" name="username" placeholder="Username" class="field" value="<?php echo $_REQUEST['username']; ?>"/><br />
                 <input type="password" name="password" placeholder="Password" class="field"/><br />
                 <input type="submit" name="login" value="Login" class="register"/>
               </form>
